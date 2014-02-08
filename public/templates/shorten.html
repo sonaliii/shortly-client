@@ -1,0 +1,16 @@
+<!--       <h1>Shortly</h1>
+      <div ng-controller='FrameController'>
+      <ul>
+        <li><a href="#" class="index">All Links</a></li>
+        <li><a href="#" class="create">Shorten</a></li>
+      </ul>
+      </div>
+      <div id="container"></div> -->
+<div class="creator" ng-controller="ShortenController">
+    <form> 
+        <input class="text" type="text" ng-model="url">
+        <input type="submit" value="Shorten" ng-click="submit(url)">
+    </form>
+    <img class="spinner" src="/spiffygif_46x46.gif">
+    <div class="message"></div>
+</div>

@@ -1,0 +1,22 @@
+
+<div class="links" ng-init="orderBy='visits': reverse=false">
+	<div>Sort By:</div>
+	<button ng-click="orderBy='created_at'">Created At</button>
+	<button ng-click="orderBy='updated_at'">Last Visited</button>
+	<button ng-click=""orderBy='title'"">Title</button>
+	<button ng-click="reverse=true">+</button>
+	<button ng-click="reverse=false">-</button>
+	<input type="text" ng-model="search.title" placeholder="Search" />
+	<div class="link" ng-repeat="link in links | filter: search | orderBy:orderBy:reverse">
+	  <img src="/redirect_icon.png"/>
+	  <div class="info">
+	    <div class="visits"><span class="count">{{link.visits}}</span>Visits</div>
+	    <div class="title">{{link.title}}</div>
+	    <div class="original">{{link.url}}</div>
+	    <a href="{{link.base_url}}/{{link.code}}">{{link.base_url}}/{{link.code}}</a>
+	  </div>
+	</div>
+</div>
+
+<!-- ng-model binds value of DOM element to value in JS -->
+
